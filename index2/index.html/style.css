@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+}
+
+.menu {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #4CAF50;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('logo.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.436);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px black;
+  color: #4CAF50;
+}
+
+.hero p {
+  font-size: 22px;
+  margin: 15px 0 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #4CAF50;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #388E3C;
+  transform: scale(1.05);
+}
+
+/* ABOUT */
+.about {
+  padding: 100px 10%;
+  background: #1614146b;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 36px;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* ÜRÜNLER */
+.makine {
+  padding: 100px 10%;
+  background: #0f0f0f;
+  text-align: center;
+}
+
+.makine h2 {
+  font-size: 36px;
+  color: #4CAF50;
+  margin-bottom: 50px;
+}
+
+.makine .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Mellemrum mellem billederne */
+}
+
+.makine .car-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+  width: calc(33.33% - 20px); /* Billederne fylder en tredjedel af containeren */
+  margin-bottom: 20px; /* Giver lidt afstand mellem rækkerne */
+}
+
+.makine .car-card:hover {
+  transform: translateY(-8px);
+}
+
+.makine .car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.makine .car-card h3 {
+  color: #4CAF50;
+  margin: 15px 0 5px;
+}
+
+.makine .car-card p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Responsivt layout til mobile enheder */
+@media (max-width: 768px) {
+  .makine .car-card {
+    width: 48%; /* Gør billederne lidt større på mindre skærme */
+  }
+}
+
+@media (max-width: 480px) {
+  .makine .car-card {
+    width: 100%; /* På meget små skærme fylder billederne hele bredden */
+  }
+}
+
+
+/* CUSTOMER SLIDER */
+.customers {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.customers h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.slider {
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slide-track {
+  display: flex;
+  animation: scroll 20s linear infinite; /* Uendelig rulleanimation */
+}
+
+.slide {
+  height: 100px;
+  width: 150px;
+  margin: 0 15px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide:hover img {
+  transform: scale(1.1); /* Zoom effekt på hover */
+}
+
+/* Animering: billederne bevæger sig kontinuerligt */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150px * 6)); /* 6 billeder skal være synlige */
+  }
+}
+
+/* İLETİŞİM */
+.contact {
+  padding: 100px 10%;
+  background: #1614146b;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 36px;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #999;
+  font-size: 14px;
+}
